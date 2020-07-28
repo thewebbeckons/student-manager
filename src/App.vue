@@ -15,7 +15,7 @@
 import NewStudent from "./components/NewStudent";
 import Students from "./components/Students";
 import EditStudent from "./components/EditStudent";
-
+import store from './store.js'
 
 export default {
   name: "App",
@@ -28,6 +28,9 @@ export default {
     return {
       //
     };
+  },
+  async created() {
+    this.$store.dispatch('getStudents')
   }
 };
 </script>
